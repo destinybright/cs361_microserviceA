@@ -54,4 +54,4 @@ print(f"Random image saved as: {filename}")
 ```
 
 ## C. UML Sequence Diagram
-![UML Diagram](https://github.com/destinybright/cs361_microserviceA/uml-diagram.png)
+![UML Diagram](uml-diagram.png)

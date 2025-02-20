@@ -17,7 +17,7 @@ You can either send an empty string as the request message, or you can send any 
 No other parameters are needed
 
 ### Example call:
-```
+```python
 # set up zeromq
 context = zmq.Context()
 
@@ -36,7 +36,7 @@ socket.send_string("Fetch a random NASA image")
 After sending the request, the microservice will senf back the filename of the image as a string. You then need to acknowledge the microservice so that it knows to send the binary image data. After that, the microservice sends the image as binary data and can be saved to a file.
 
 ### Example call:
-```
+```python
 # receive the filename
 filename = socket.recv_string()
 print(f"Filename received: {filename}")

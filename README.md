@@ -54,4 +54,4 @@ print(f"Random image saved as: {filename}")
 ```
 
 ## C. UML Sequence Diagram
-![UML Diagram](uml-diagram.png)
+![UML Diagram](uml_diagram.png)

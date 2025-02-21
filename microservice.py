@@ -51,23 +51,20 @@ def main():
     
     socket.bind("tcp://*:5555")
 
-    print("NASA image microservice running...")
-    message = socket.recv_string() 
-    print(f"Received request: {message}")
+    while True:
+        print("NASA image microservice running...")
+        message = socket.recv_string() 
+        print(f"Received request: {message}")
 
-    image_data, filename, error = get_image()
+        image_data, filename, error = get_image()
 
-    if error:
-        socket.send_string(f"ERROR: {error}")
-    else:
-        socket.send_string(filename)
-        socket.recv()
+        if error:
+            socket.send_string(f"ERROR: {error}")
+        else:
+            socket.send_string(filename)
+            socket.recv()
 
-        socket.send(image_data)
-
-    print("Image sent. Stopping the microservice.")
-    socket.close()
-    context.term()
+            socket.send(image_data)
 
 if __name__ == "__main__":
     main()
